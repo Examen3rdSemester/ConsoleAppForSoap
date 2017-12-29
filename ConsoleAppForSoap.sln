@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppForSoap", "ConsoleAppForSoap\ConsoleAppForSoap.csproj", "{CAA94059-8993-4A5E-A28B-A0B5D9544E5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAA94059-8993-4A5E-A28B-A0B5D9544E5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAA94059-8993-4A5E-A28B-A0B5D9544E5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAA94059-8993-4A5E-A28B-A0B5D9544E5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAA94059-8993-4A5E-A28B-A0B5D9544E5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED7FC1D8-F5AF-4C83-8297-05EDAEACE064}
+	EndGlobalSection
+EndGlobal
