@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_IService1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://wcfsoapeksamen.azurewebsites.net/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://wcfsoapeksamen.azurewebsites.net/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://wcfsoapeksamen.azurewebsites.net/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCF_SOAP_Template" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_VisListen_InputMessage">
+    <wsdl:part name="parameters" element="tns:VisListen" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VisListen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VisListenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IndsætObjekt_InputMessage">
+    <wsdl:part name="parameters" element="tns:IndsætObjekt" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IndsætObjekt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IndsætObjektResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SletObjekt_InputMessage">
+    <wsdl:part name="parameters" element="tns:SletObjekt" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SletObjekt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SletObjektResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RedigerObjekt_InputMessage">
+    <wsdl:part name="parameters" element="tns:RedigerObjekt" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RedigerObjekt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RedigerObjektResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UdregnObjekt_InputMessage">
+    <wsdl:part name="parameters" element="tns:UdregnObjekt" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UdregnObjekt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UdregnObjektResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="VisListen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VisListen" message="tns:IService1_VisListen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VisListenResponse" message="tns:IService1_VisListen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IndsætObjekt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IndsætObjekt" message="tns:IService1_IndsætObjekt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IndsætObjektResponse" message="tns:IService1_IndsætObjekt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SletObjekt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SletObjekt" message="tns:IService1_SletObjekt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SletObjektResponse" message="tns:IService1_SletObjekt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RedigerObjekt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RedigerObjekt" message="tns:IService1_RedigerObjekt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RedigerObjektResponse" message="tns:IService1_RedigerObjekt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UdregnObjekt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UdregnObjekt" message="tns:IService1_UdregnObjekt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UdregnObjektResponse" message="tns:IService1_UdregnObjekt_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VisListen">
+      <soap:operation soapAction="http://tempuri.org/IService1/VisListen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndsætObjekt">
+      <soap:operation soapAction="http://tempuri.org/IService1/IndsætObjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SletObjekt">
+      <soap:operation soapAction="http://tempuri.org/IService1/SletObjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedigerObjekt">
+      <soap:operation soapAction="http://tempuri.org/IService1/RedigerObjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UdregnObjekt">
+      <soap:operation soapAction="http://tempuri.org/IService1/UdregnObjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpsBinding_IService1" type="tns:IService1">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_IService1_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VisListen">
+      <soap:operation soapAction="http://tempuri.org/IService1/VisListen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndsætObjekt">
+      <soap:operation soapAction="http://tempuri.org/IService1/IndsætObjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SletObjekt">
+      <soap:operation soapAction="http://tempuri.org/IService1/SletObjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedigerObjekt">
+      <soap:operation soapAction="http://tempuri.org/IService1/RedigerObjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UdregnObjekt">
+      <soap:operation soapAction="http://tempuri.org/IService1/UdregnObjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://wcfsoapeksamen.azurewebsites.net/Service1.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpsBinding_IService1" binding="tns:BasicHttpsBinding_IService1">
+      <soap:address location="https://wcfsoapeksamen.azurewebsites.net/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
